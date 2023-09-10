@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyeccióm MO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    
+
+    <div class="" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Proyección MO</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="exampleInputEmail1" class="form-label">Pacientes requeridos:</label>
+                <input type="number" class="form-control" value="42000" style="font-weight: bold;">
+            </div>
+            <div class="col-md-4">
+                <label for="exampleInputEmail1" class="form-label">Pacientes evaluados al (07/09/23):</label>
+                <input type="number" class="form-control" value="10883" style="font-weight: bold;">
+            </div>
+
+            <div class="col-md-4">
+                <label for="exampleInputEmail1" class="form-label">Pacientes por evaluar:</label>
+                <input type="number" class="form-control" value="31117" style="font-weight: bold;">
+            </div>
+           
+        </div>
+        <div class="row">
+            
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Capatación actual</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="" class="form-label" >Capatacion por día</label>
+                <h3>35</h3>
+            </div>
+            <div class="col-md-6">
+                <label for="" class="form-label" >Capatacion por mes</label>
+                <h3>700</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary" id="proyeccionActual">Ver Proyección</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>  
+    <br>
+    <div style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Propuesta para cumplimiento</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="" class="form-label" >Feha estimada de implementación:</label>
+                <input type="date" class="form-control" id="fechaImplementacion">
+            </div>
+            <div class="col-md-4">
+                <label for="" class="form-label" >Feha estimada de finalizacion del proyecto:</label>
+                <input type="date" class="form-control" id="fechaFinalizacion">
+            </div>
+            <div class="col-md-4">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-success" id="proyeccionCaptacion">Calcular capatación</button>
+                    <button type="button" class="btn btn-primary" id="proyeccionEsperada">Ver proyección</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="" class="form-label" >Total meses</label>
+                <input type="number" class="form-control" id="captacionMensualProyeccion">
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="" class="form-label" >Capatacion esperada por mes:</label>
+                <input type="numbre" class="form-control" id="pacientesMes" style="font-weight: bold;">
+            </div>
+            <div class="col-md-4">
+                <label for="" class="form-label" >Capatacion esperada por semana:</label>
+                <input type="numbre" class="form-control" id="pacientesSemana" style="font-weight: bold;">
+            </div>
+            <div class="col-md-4">
+                <label for="" class="form-label" >Capatacion esperada por día:</label>
+                <input type="numbre" class="form-control" id="pacientesDia" style="font-weight: bold;">
+            </div>
+        </div>
+
+        <div class="row" id="captacion-sede">
+            <div class="col-md-2">
+                <label for="" class="form-label" >Samein - Aguacat</label>
+                <input type="numbre" class="form-control cap-sede" id="captacion-sameinagua" style="font-weight: bold; ">
+            </div>
+            <div class="col-md-2">
+                <label for="" class="form-label" >Samein - San Juan</label>
+                <input type="numbre" class="form-control cap-sede" id="captacion-sameinsan"  style="font-weight: bold;">
+            </div>
+            <div class="col-md-2">
+                <label for="" class="form-label" >La Ceja</label>
+                <input type="numbre" class="form-control cap-sede" id="captacion-ceja" style="font-weight: bold;">
+            </div>
+            <div class="col-md-2">
+                <label for="" class="form-label" >Manizales</label>
+                <input type="numbre" class="form-control cap-sede" id="captacion-mani" style="font-weight: bold;">
+            </div>
+            <div class="col-md-2">
+                <label for="" class="form-label" >HOMO</label>
+                <input type="numbre" class="form-control" id="captacion-homo" style="font-weight: bold;">
+            </div>
+            <div class="col-md-2">
+                <label for="" class="form-label" >TOTAL</label>
+                <input type="numbre" class="form-control" id="total" style="font-weight: bold;">
+            </div>
+            
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+</html>
+
+
+<style>
+    input{
+        text-align: center;
+        border: 0 !important;
+    }
+
+</style>
+
+<script>
+    $("#porevaluar").val(parseFloat($("#requeridos").val()) - parseFloat($("#evalaudos").val()))
+
+</script>
