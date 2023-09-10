@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $("#captacion-sede").hide();
+    $(".captacion-sede").hide();
     /*** Variables globales */
     var n = 42000;
     var ya_evaluados = 10883
@@ -86,7 +86,7 @@ $( document ).ready(function() {
     } );
 
     $("#proyeccionCaptacion").on( "click", function() {
-        $("#captacion-sede").show();
+        $(".captacion-sede").show();
         mes_para_cumplimiento = 0;
         total_mese_cumplimiento = 0;
         total_semana_cumplimiento = 0;
