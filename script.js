@@ -66,7 +66,7 @@ $( document ).ready(function() {
 
     $( "#proyeccionActual" ).on( "click", function() {
         var datosActuales =  {
-            label: 'Capatación Actual', // Name the series
+            label: 'Captación Actual', // Name the series
             data: data_chart_2, // Specify the data values array
             fill: false,
             borderColor: '#2d2a2a', // Add custom color border (Line)
