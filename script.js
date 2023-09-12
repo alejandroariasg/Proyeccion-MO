@@ -8,6 +8,7 @@ $( document ).ready(function() {
     var total_mese_cumplimiento = 0;
     var total_semana_cumplimiento = 0;
     var total_dias_cumplimiento = 0;
+    var captacionhomo = 0;
 
 
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -123,7 +124,15 @@ $( document ).ready(function() {
         $('#captacion-sameinsan').val( Math.round(total_dias_cumplimiento * (11 / 100)) );
         $('#captacion-ceja').val( Math.round(total_dias_cumplimiento * (17 / 100)) );
         $('#captacion-mani').val( Math.round(total_dias_cumplimiento * (11 / 100)) );
-        $('#captacion-homo').val( Math.round(total_dias_cumplimiento * (50 / 100)) );
+        captacionhomo = Math.round(total_dias_cumplimiento * (50 / 100));
+        $('#total_homo').text(captacionhomo)
+        console.log(captacionhomo);
+        $('#captacion-homo-opt1').val( Math.round(captacionhomo * (66.26 / 100)) );
+        $('#captacion-homo-opt2').val( Math.round(captacionhomo * (16.5 / 100)) );
+        $('#captacion-homo-opt3').val( Math.round(captacionhomo * (17.17 / 100)) );
+
+        
+
         $('#total').val(parseFloat($('#captacion-sameinagua').val()) + parseFloat($('#captacion-sameinsan').val()) + parseFloat( $('#captacion-ceja').val()) + parseFloat( $('#captacion-mani').val()) + parseFloat( $('#captacion-homo').val()));
     });
 
@@ -134,7 +143,11 @@ $( document ).ready(function() {
         var ceja = parseInt($('#captacion-ceja').val());
         var mani = parseInt( $('#captacion-mani').val()); 
 
-        $('#captacion-homo').val(  dia - sameinagua - sameinsan - ceja - mani);
+        captacionhomo =  (dia - sameinagua - sameinsan - ceja - mani);
+        $('#total_homo').text(captacionhomo)
+        $('#captacion-homo-opt1').val( Math.round(captacionhomo * (66.26 / 100)) );
+        $('#captacion-homo-opt2').val( Math.round(captacionhomo * (16.5 / 100)) );
+        $('#captacion-homo-opt3').val( Math.round(captacionhomo * (17.17 / 100)) );
     });
 
     $("#captacion-homo").on( "input", function() {
